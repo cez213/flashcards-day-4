@@ -67,7 +67,31 @@ app.post('/cards', function (req, res, next){
         if(err) return next(err);
         res.send(newCard);
     });
+    //REVIEW
+/*    FlashCardModel.create(req.body)
+    .then(function (newCard){
+        res.send(newCard);
+    })
+    .then(null, next);*/
 })
+
+//route responds with updated flash card (after edit)
+/*app.put('/cards/:flashCardId', function (req, res, next){
+    FlashCardModel.findById(flashCardId, function(err, card){
+        if(!card) return next(err);
+        
+        for(var key in req.body){
+            card[key] = req.body[key];
+        }
+
+        card.save(function(err, card){
+            if(err) return next(err);
+            console.log("updated card:", card);
+            res.send(card);
+        })
+        
+    })
+})*/
 
 
 

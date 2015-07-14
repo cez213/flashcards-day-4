@@ -36,7 +36,7 @@ app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFacto
 	}
 
 	$scope.$on('addNewCard', function(event, data){
-		if(data.category === $scope.selected) $scope.flashCards.push(data)
+		if(data.category === $scope.selected || $scope.selected === 'all') $scope.flashCards.push(data)
 	})
 
 })
